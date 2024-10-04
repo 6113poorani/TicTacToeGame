@@ -20,9 +20,10 @@ public class ViewScreen {
             System.out.println("The cell is already filled");
             gameOn(playerNo,grid);
         }
-        grid[row][col]=playerNo==1?'X':'O';
+        char letter=playerNo==1?'X':'O';
+        grid[row][col]=letter;
         printBoard(grid);
-        if(viewModel.win(playerNo,row,col,grid)==true){
+        if(viewModel.win(playerNo,row,col,grid,letter)==true){
             System.out.println(playerNo+" Won the Match ");
             System.exit(0);
         }
